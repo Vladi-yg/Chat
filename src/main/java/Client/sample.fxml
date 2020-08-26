@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<VBox fx:controller="Client.Controller" xmlns:fx="http://javafx.com/fxml" alignment="center" >
+
+
+    <HBox fx:id="upperPanel">
+        <TextField fx:id="loginField" promptText="Login"/>
+        <PasswordField fx:id="passwordField" promptText="Password" onAction="#tryAuth"></PasswordField>
+        <Button fx:id="tryAuth" text="Check" onAction="#tryAuth"/>
+    </HBox>
+
+    <HBox VBox.vgrow="ALWAYS">
+        <!--TextArea fx:id="textArea" editable="false" VBox.vgrow="ALWAYS" /-->
+        <VBox HBox.hgrow="ALWAYS">
+            <VBox fx:id="chatField" VBox.vgrow="ALWAYS">
+                <ScrollPane></ScrollPane>
+            </VBox>
+            <!--TextArea   fx:id="textArea"></TextArea-->
+            <HBox fx:id="bottomPanel" managed="false" visible="false">
+                <TextField fx:id="msg" HBox.hgrow="ALWAYS" promptText="Напишите что-нибудь здесь " onAction="#sendMsg"/>
+                <Button fx:id="sendMsg" text="ОТПРАВИТЬ" onAction="#sendMsg"/>
+            </HBox>
+        </VBox>
+        <ListView fx:id="clientList" managed="false" visible="false"></ListView>
+    </HBox>
+</VBox>
+
+
